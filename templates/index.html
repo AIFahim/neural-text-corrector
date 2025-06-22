@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Text Corrector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Neural Text Corrector</h1>
+            <p class="subtitle">AI-powered spelling and grammar correction</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="section-header">
+                    <h2>Enter Your Text</h2>
+                    <button id="clearBtn" class="secondary-btn">Clear</button>
+                </div>
+                <textarea id="inputText" placeholder="Type or paste your text here..."></textarea>
+                <div class="action-buttons">
+                    <button id="correctBtn" class="primary-btn">
+                        <span class="btn-text">Correct Text</span>
+                        <span class="loader" style="display: none;"></span>
+                    </button>
+                    <button id="exampleBtn" class="secondary-btn">Load Example</button>
+                </div>
+            </div>
+
+            <div class="output-section" id="outputSection" style="display: none;">
+                <div class="section-header">
+                    <h2>Corrected Text</h2>
+                    <button id="copyBtn" class="secondary-btn">Copy</button>
+                </div>
+                <div id="outputText" class="output-text"></div>
+                <div class="stats">
+                    <span class="stat-item">
+                        <strong>Words:</strong> <span id="wordCount">0</span>
+                    </span>
+                    <span class="stat-item">
+                        <strong>Corrections:</strong> <span id="correctionCount">0</span>
+                    </span>
+                    <span class="stat-item">
+                        <strong>Time:</strong> <span id="processingTime">0</span>s
+                    </span>
+                </div>
+            </div>
+
+            <div class="comparison-section" id="comparisonSection" style="display: none;">
+                <h2>Comparison</h2>
+                <div class="comparison-container">
+                    <div class="comparison-column">
+                        <h3>Original</h3>
+                        <div id="originalText" class="comparison-text"></div>
+                    </div>
+                    <div class="comparison-column">
+                        <h3>Corrected</h3>
+                        <div id="correctedText" class="comparison-text"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by GPT-2 Neural Language Model</p>
+        </footer>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

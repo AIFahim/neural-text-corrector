@@ -1,6 +1,6 @@
 # Neural Text Corrector
 
-A context-aware text correction system powered by GPT-2 language model that corrects spelling errors by understanding context and meaning.
+A context-aware text correction system powered by GPT-2 language model that corrects spelling errors by understanding context and meaning. Available as both command-line tool and web interface.
 
 ## Features
 
@@ -28,7 +28,34 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Interactive Mode
+### Web Interface (NEW!)
+
+Start the web server:
+```bash
+# Install Flask if not already installed
+pip install flask
+
+# Run the web interface
+python app.py
+
+# Or use the run script
+python run_web.py
+
+# For CPU-only mode
+python run_web.py --cpu
+```
+
+Then open your browser and go to: http://localhost:5000
+
+The web interface features:
+- Clean, modern UI
+- Real-time text correction
+- Side-by-side comparison with highlighted changes
+- Statistics (words, corrections, processing time)
+- Example sentences
+- Copy to clipboard functionality
+
+### Interactive Mode (Command Line)
 
 ```bash
 python main.py
@@ -96,11 +123,20 @@ neural-text-corrector/
 │   ├── scripts/
 │   │   └── cli.py                # Command-line interface
 │   └── utils/                    # Utility scripts
+├── static/                       # Web interface assets
+│   ├── css/
+│   │   └── style.css            # Styling
+│   └── js/
+│       └── main.js              # Frontend logic
+├── templates/
+│   └── index.html               # Web interface template
 ├── data/
 │   └── word_frequencies.txt      # Word frequency data
+├── app.py                        # Flask web application
 ├── config.yml                    # Configuration
 ├── requirements.txt              # Dependencies
-├── main.py                       # Entry point
+├── main.py                       # CLI entry point
+├── run_web.py                    # Web interface launcher
 ├── example.py                    # Usage examples
 ├── setup.py                      # Package setup
 └── README.md                     # This file
