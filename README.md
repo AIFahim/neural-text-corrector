@@ -18,9 +18,8 @@ A context-aware text correction system powered by GPT-2 language model that corr
 ## Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/neural-text-corrector.git
-cd neural-text-corrector
+# Navigate to the project directory
+cd /mnt/c/Users/MdAsifIqbalFahim/PycharmProjects/spel_checker/gpt2-spell-checker-master
 
 # Install dependencies
 pip install -r requirements.txt
@@ -45,7 +44,7 @@ python run_web.py
 python run_web.py --cpu
 ```
 
-Then open your browser and go to: http://localhost:5000
+Then open your browser and go to: http://localhost:5001
 
 The web interface features:
 - Clean, modern UI
@@ -149,7 +148,3 @@ See `example.py` for detailed usage examples including:
 - Advanced configuration
 - Batch processing
 - Performance measurement
-
-## License
-
-MIT License - see LICENSE.md for details
